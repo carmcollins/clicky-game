@@ -16,24 +16,36 @@ class App extends React.Component {
         clicked,
     };
 
-    checkGuess = id => {
-        console.log(id);
+    // Shuffles the ice cream photos on page load
+    componentDidMount() {
+        this.setState({icecreams: this.shuffle(this.state.icecreams)});
+    }
 
+    // Checks to see if the user's guess is correct or incorrect
+    checkGuess = id => {
         if (!clicked.includes(id)) {
             this.setState({message: "You guessed correctly!"});
             clicked.push(id);
             let updatedScore = this.state.score + 1;
-            this.setState({score: updatedScore});
+            this.setState({score: updatedScore, icecreams: this.shuffle(this.state.icecreams)});
             if (clicked.length === icecreams.length) {
                 this.setState({message: "You win!"});
                 clicked = [];
-                this.setState({score: 0});
+                this.setState({score: 0, icecreams: this.shuffle(this.state.icecreams)});
             }
         } else {
             this.setState({message: "You guessed incorrectly!"});
             clicked = [];
-            this.setState({score: 0});
+            this.setState({score: 0, icecreams: this.shuffle(this.state.icecreams)});
         }
+    }
+
+    shuffle = icecreams => {
+        for (let i = icecreams.length - 1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i + 1));
+            [icecreams[i], icecreams[j]] = [icecreams[j], icecreams[i]]
+        }
+        return icecreams;
     }
 
     render() {
