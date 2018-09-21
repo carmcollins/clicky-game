@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "name": "Truffle Kerfuffle",
+        "image": "https://www.benjerry.com/files/live/sites/systemsite/files/flavors/products/us/pint/truffle-kerfuffle-detail.png"
+    },
+    {
+        "id": 2,
+        "name": "Phish Food",
+        "image": "https://www.benjerry.com/files/live/sites/systemsite/files/flavors/products/us/pint/phish-food-detail.png"
+    },
+    {
+        "id": 3,
+        "name": "Gimme S'more",
+        "image": "https://www.benjerry.com/files/live/sites/systemsite/files/flavors/products/us/pint/gimme-smore-detail.png"
+    },
+    {
+        "id": 4,
+        "name": "Milk & Cookies",
+        "image": "https://www.benjerry.com/files/live/sites/systemsite/files/flavors/products/us/pint/milk-and-cookies-detail.png"
+    },
+    {
+        "id": 5,
+        "name": "Glampfire Trail Mix",
+        "image": "https://www.benjerry.com/files/live/sites/systemsite/files/flavors/products/us/pint/glampfire-trail-mix-detail.png"
+    },
+    {
+        "id": 6,
+        "name": "Banana Split",
+        "image": "https://www.benjerry.com/files/live/sites/systemsite/files/flavors/products/us/pint/banana-split-detail.png"
+    },
+    {
+        "id": 7,
+        "name": "Cherry Garcia",
+        "image": "https://www.benjerry.com/files/live/sites/systemsite/files/flavors/products/us/pint/cherry-garcia-detail.png"
+    },
+    {
+        "id": 8,
+        "name": "Cheesecake Brownie",
+        "image": "https://www.benjerry.com/files/live/sites/systemsite/files/flavors/products/us/pint/cheesecake-brownie-detail.png"
+    },
+    {
+        "id": 9,
+        "name": "Chocolate Therapy",
+        "image": "https://www.benjerry.com/files/live/sites/systemsite/files/flavors/products/us/pint/chocolate-therapy-detail.png"
+    },
+    {
+        "id": 10,
+        "name": "Chunky Monkey",
+        "image": "https://www.benjerry.com/files/live/sites/systemsite/files/flavors/products/us/pint/chunky-monkey-detail.png"
+    },
+    {
+        "id": 11,
+        "name": "Everything But The...",
+        "image": "https://www.benjerry.com/files/live/sites/systemsite/files/flavors/products/us/pint/everything-but-the-detail.png"
+    },
+    {
+        "id": 12,
+        "name": "Half Baked",
+        "image": "https://www.benjerry.com/files/live/sites/systemsite/files/flavors/products/us/pint/half-baked-detail.png"
+    }
+]
