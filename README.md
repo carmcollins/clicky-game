@@ -6,6 +6,6 @@ This project uses React JS to create a memory game. Twelve Ben & Jerry's ice cre
 
 ### How To Play
 
-Visit [this link]() and click any ice cream to begin!
+Visit [this link](https://carmcollins.github.io/clicky-game/) and click any ice cream to begin!
 
 <img src="./public/game.png">
