@@ -8,11 +8,12 @@ const styles = {
   }
 }
 
-const Card = (props) => (
+const Card = props => (
   <img 
     src={props.image} 
     alt={props.name} 
     style={styles.image} 
+    onClick={() => props.checkGuess(props.id)} 
   />
 );
 

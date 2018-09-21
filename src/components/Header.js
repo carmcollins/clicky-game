@@ -19,10 +19,10 @@ const Header = props => (
                 <h4 style={styles.h4}>Ben & Jerry's Memory Game</h4>
             </div>
             <div className="col-sm-12 col-md-4">
-                <h4 style={styles.h4}>You guessed correctly!</h4>
+                <h4 style={styles.h4}>{props.message}</h4>
             </div>
             <div className="col-sm-12 col-md-4">
-                <h4 style={styles.h4}>Score: 12</h4>
+                <h4 style={styles.h4}>Score: {props.score}</h4>
             </div>
         </div>
     </div>

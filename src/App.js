@@ -4,24 +4,62 @@ import Header from "./components/Header.js";
 import Card from "./components/Card.js";
 import icecreams from "./icecreams.json";
 
-const App = () => (
-    <div>
-        <Header />
-        <Wrapper>
-            <Card image={icecreams[0].image} />
-            <Card image={icecreams[1].image} />
-            <Card image={icecreams[2].image} />
-            <Card image={icecreams[3].image} />
-            <Card image={icecreams[4].image} />
-            <Card image={icecreams[5].image} />
-            <Card image={icecreams[6].image} />
-            <Card image={icecreams[7].image} />
-            <Card image={icecreams[8].image} />
-            <Card image={icecreams[9].image} />
-            <Card image={icecreams[10].image} />
-            <Card image={icecreams[11].image} />
-        </Wrapper>
-    </div>
-);
+let clicked = [];
+
+class App extends React.Component {
+
+    // Sets the initial state of the ice cream cards
+    state = {
+        message: "Click an ice cream to begin!",
+        score: 0,
+        icecreams,
+        clicked,
+    };
+
+    checkGuess = id => {
+        console.log(id);
+
+        if (!clicked.includes(id)) {
+            this.setState({message: "You guessed correctly!"});
+            clicked.push(id);
+            let updatedScore = this.state.score + 1;
+            this.setState({score: updatedScore});
+            if (clicked.length === icecreams.length) {
+                this.setState({message: "You win!"});
+                clicked = [];
+                this.setState({score: 0});
+            }
+        } else {
+            this.setState({message: "You guessed incorrectly!"});
+            clicked = [];
+            this.setState({score: 0});
+        }
+    }
+
+    render() {
+        return (
+            <div>
+            <Header 
+                message={this.state.message} 
+                score={this.state.score} 
+            />
+            <Wrapper>
+                {this.state.icecreams.map(item => (
+                    <Card 
+                        key={item.id}
+                        id={item.id}
+                        image={item.image} 
+                        name={item.name} 
+                        selectItem={this.selectItem} 
+                        score={this.state.score}
+                        checkGuess={this.checkGuess}
+                    />
+                ))}
+            </Wrapper>
+            </div>
+        )
+    }
+
+}
 
 export default App;
