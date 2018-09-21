@@ -1,6 +1,7 @@
 import React from 'react';
 import Wrapper from "./components/Wrapper.js";
 import Header from "./components/Header.js";
+import Title from "./components/Title.js";
 import Card from "./components/Card.js";
 import icecreams from "./icecreams.json";
 
@@ -10,43 +11,52 @@ class App extends React.Component {
 
     // Sets the initial state of the ice cream cards
     state = {
-        message: "Click an ice cream to begin!",
+        message: "",
         score: 0,
         icecreams,
-        clicked,
+        clicked
     };
 
     // Shuffles the ice cream photos on page load
     componentDidMount() {
         this.setState({icecreams: this.shuffle(this.state.icecreams)});
-    }
+    };
 
     // Checks to see if the user's guess is correct or incorrect
     checkGuess = id => {
         if (!clicked.includes(id)) {
-            this.setState({message: "You guessed correctly!"});
+            this.setState({message: "Good guess!"});
             clicked.push(id);
             let updatedScore = this.state.score + 1;
-            this.setState({score: updatedScore, icecreams: this.shuffle(this.state.icecreams)});
+            this.setState({
+                score: updatedScore, 
+                icecreams: this.shuffle(this.state.icecreams)
+            });
             if (clicked.length === icecreams.length) {
                 this.setState({message: "You win!"});
                 clicked = [];
-                this.setState({score: 0, icecreams: this.shuffle(this.state.icecreams)});
+                this.setState({
+                    score: 0,
+                    icecreams: this.shuffle(this.state.icecreams)
+                });
             }
         } else {
-            this.setState({message: "You guessed incorrectly!"});
+            this.setState({message: "So close..."});
             clicked = [];
-            this.setState({score: 0, icecreams: this.shuffle(this.state.icecreams)});
+            this.setState({
+                score: 0, 
+                icecreams: this.shuffle(this.state.icecreams)
+            });
         }
-    }
+    };
 
     shuffle = icecreams => {
         for (let i = icecreams.length - 1; i > 0; i--) {
             let j = Math.floor(Math.random() * (i + 1));
-            [icecreams[i], icecreams[j]] = [icecreams[j], icecreams[i]]
+            [icecreams[i], icecreams[j]] = [icecreams[j], icecreams[i]];
         }
         return icecreams;
-    }
+    };
 
     render() {
         return (
@@ -56,6 +66,7 @@ class App extends React.Component {
                 score={this.state.score} 
             />
             <Wrapper>
+                <Title />
                 {this.state.icecreams.map(item => (
                     <Card 
                         key={item.id}
@@ -70,8 +81,8 @@ class App extends React.Component {
             </Wrapper>
             </div>
         )
-    }
+    };
 
-}
+};
 
 export default App;

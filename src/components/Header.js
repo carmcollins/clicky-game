@@ -6,23 +6,25 @@ const styles = {
         backgroundColor: "mediumaquamarine",
         borderBottom: "5px solid white"
     },
-    h4: {
+    p: {
         color: "white",
-        textAlign: "center"
+        fontSize: "2em",
+        textAlign: "center",
+        fontFamily: "Chelsea Market, cursive"
     }
 }
 
 const Header = props => (
     <div style={styles.header}>
         <div className="row">
-            <div className="col-sm-12 col-md-4">
-                <h4 style={styles.h4}>Ben & Jerry's Memory Game</h4>
+            <div className="col-sm-12 col-md-6">
+                <p style={styles.p}>Ben & Jerry's Memory Game</p>
             </div>
-            <div className="col-sm-12 col-md-4">
-                <h4 style={styles.h4}>{props.message}</h4>
+            <div className="col-sm-12 col-md-3">
+                <p style={styles.p}>{props.message}</p>
             </div>
-            <div className="col-sm-12 col-md-4">
-                <h4 style={styles.h4}>Score: {props.score}</h4>
+            <div className="col-sm-12 col-md-3">
+                <p style={styles.p}>Score: {props.score}</p>
             </div>
         </div>
     </div>
